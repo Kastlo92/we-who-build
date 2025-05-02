@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://csa7fq71bcria"]
+[gd_scene load_steps=6 format=3 uid="uid://csa7fq71bcria"]
 
 [ext_resource type="Script" path="res://Scripts/GridManager.gd" id="1_0bs3j"]
 [ext_resource type="Texture2D" uid="uid://b004wenkwfs1t" path="res://Assets/Tileset/cityTiles_sheet.png" id="2_7x0ew"]
-[ext_resource type="PackedScene" uid="uid://do8v42k0hevdg" path="res://Scenes/CityBuildings/House.tscn" id="3_vxqpb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1xcla"]
 texture = ExtResource("2_7x0ew")
@@ -6167,7 +6166,6 @@ texture = ExtResource("2_7x0ew")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_dvjdx"]
 resource_name = "House"
-scenes/1/scene = ExtResource("3_vxqpb")
 
 [sub_resource type="TileSet" id="TileSet_dcpom"]
 sources/0 = SubResource("TileSetAtlasSource_1xcla")
@@ -6177,5 +6175,4 @@ sources/1 = SubResource("TileSetScenesCollectionSource_dvjdx")
 script = ExtResource("1_0bs3j")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray(0, 0, 253, 255, 6, 0, 0, 0, 33, 0, 20, 0, 0, 0)
 tile_set = SubResource("TileSet_dcpom")

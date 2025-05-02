@@ -21,7 +21,7 @@ func _input(event):
 		
 func insertTile(position: Vector2i) -> void:
 	var tileData = tileMapLayer.get_cell_tile_data(position)
-	print(tileData.get_custom_data())
-	tileMapLayer.set_cell(position, 0, Vector2i(1,1))	
+	print(tileData)
+	tileMapLayer.set_cell(position, 1, Vector2i(1,1))	
 
 	pass
