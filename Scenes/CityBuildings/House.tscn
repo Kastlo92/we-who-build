@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://do8v42k0hevdg"]
+[gd_scene load_steps=3 format=3 uid="uid://do8v42k0hevdg"]
 
-[ext_resource type="Texture2D" uid="uid://b004wenkwfs1t" path="res://Assets/Tileset/cityTiles_sheet.png" id="1_x75ft"]
+[ext_resource type="Texture2D" uid="uid://4nmaxsgaij2" path="res://Assets/Tileset/cityDetails_sheet.png" id="1_cbrqf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dyeo3"]
+atlas = ExtResource("1_cbrqf")
+region = Rect2(0, 0, 72, 64)
 
 [node name="House" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_x75ft")
+texture = SubResource("AtlasTexture_dyeo3")
