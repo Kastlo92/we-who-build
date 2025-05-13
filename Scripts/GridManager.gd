@@ -16,23 +16,24 @@ func _process(delta: float) -> void:
 	pass
 
 func _input(event):
+	
 	#Posizionamento singola Tile
-	if event is InputEventMouseButton:
+	if Input.is_action_just_pressed("leftClick"):
 		var localMousePos = tileMapLayer.get_local_mouse_position()			
 		var cell_coords = tileMapLayer.local_to_map(localMousePos)
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			insertTile(cell_coords)
 			dragging = true
+		#
+		##TRASCINAMENTO
+	if Input.is_action_just_released("leftClick"):
+		dragging = false
 		
-		#TRASCINAMENTO
-	if event is InputEventMouseMotion and dragging:
+	if  dragging:
 		var localMousePos = tileMapLayer.get_local_mouse_position()			
 		var cell_coords = tileMapLayer.local_to_map(localMousePos)
 		print("dragging")
 		insertTile(cell_coords)
-
-	if not event.is_pressed():
-		dragging = false
 		
 func insertTile(position: Vector2i) -> void:
 	#Attualmente il source ID è impostato su -1 perché stiamo scrivendo su tile "vuote".
