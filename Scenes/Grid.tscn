@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://csa7fq71bcria"]
 
-[ext_resource type="Script" path="res://Scripts/GridManager.gd" id="1_0bs3j"]
+[ext_resource type="Script" uid="uid://cw3y1mm4wejr2" path="res://Scripts/GridManager.gd" id="1_0bs3j"]
 [ext_resource type="Texture2D" uid="uid://b004wenkwfs1t" path="res://Assets/Tileset/cityTiles_sheet.png" id="2_7x0ew"]
 [ext_resource type="PackedScene" uid="uid://do8v42k0hevdg" path="res://Scenes/CityBuildings/House.tscn" id="3_3xw5b"]
 
