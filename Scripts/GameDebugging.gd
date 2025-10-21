@@ -3,8 +3,8 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var mainCamera = $MainCamera
-	var grid = $Grid
+	#var mainCamera = $MainCamera
+	#var grid = $Grid
 	
 	#mainCamera.width = grid.width 
 	#mainCamera.position.y = grid.position.y + (grid.position.y)

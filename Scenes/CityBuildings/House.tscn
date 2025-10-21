@@ -1,12 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://do8v42k0hevdg"]
+[gd_scene load_steps=5 format=3 uid="uid://do8v42k0hevdg"]
 
 [ext_resource type="Texture2D" uid="uid://4nmaxsgaij2" path="res://Assets/Tileset/cityDetails_sheet.png" id="1_cbrqf"]
+[ext_resource type="Script" uid="uid://h3xelvkturf1" path="res://Scripts/House.gd" id="1_l7wbt"]
+[ext_resource type="PackedScene" uid="uid://ch7gjrfwcaqn0" path="res://Scenes/Citizen.tscn" id="3_7blv7"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dyeo3"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_hs2bv"]
 atlas = ExtResource("1_cbrqf")
-region = Rect2(0, 0, 72, 64)
+region = Rect2(224, 0, 32, 33)
 
 [node name="House" type="Node2D"]
+script = ExtResource("1_l7wbt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("AtlasTexture_dyeo3")
+position = Vector2(-16, -16)
+texture = SubResource("AtlasTexture_hs2bv")
+centered = false
+
+[node name="Citizen" parent="." instance=ExtResource("3_7blv7")]

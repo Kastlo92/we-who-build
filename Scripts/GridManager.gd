@@ -9,14 +9,12 @@ var click_radius = 32 # Size of the sprite.
 
 func _ready() -> void:	
 	tileMapLayer = get_node("TileMapLayer")
-	
 	pass 
 
 func _process(delta: float) -> void:		
 	pass
 
 func _input(event):
-	
 	#Posizionamento singola Tile
 	if Input.is_action_just_pressed("leftClick"):
 		var localMousePos = tileMapLayer.get_local_mouse_position()			
@@ -40,5 +38,4 @@ func insertTile(position: Vector2i) -> void:
 	if(tileMapLayer.get_cell_source_id(position) != -1):
 		pass
 	tileMapLayer.set_cell(position, 1, Vector2i(0,0))	
-	
 	pass

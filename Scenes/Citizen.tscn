@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch7gjrfwcaqn0"]
+
+[ext_resource type="Texture2D" uid="uid://u52w78h86v5d" path="res://Assets/citizen..png" id="1_qc8p4"]
+[ext_resource type="Script" uid="uid://bh637o6k5oj7a" path="res://Scripts/Citizen.gd" id="1_trth4"]
+
+[node name="Citizen" type="Node"]
+script = ExtResource("1_trth4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qc8p4")
