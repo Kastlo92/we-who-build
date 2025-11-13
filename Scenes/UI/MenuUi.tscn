@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://btjsw2wqe5ylm"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -277.0
+offset_top = -261.0
+offset_right = 277.0
+offset_bottom = 325.0
+
+[node name="Continue" type="Button" parent="."]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 307.0
+offset_right = 476.0
+offset_bottom = 377.0
+
+[node name="Settings" type="Button" parent="."]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 397.0
+offset_right = 475.0
+offset_bottom = 467.0
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 491.0
+offset_right = 475.0
+offset_bottom = 561.0

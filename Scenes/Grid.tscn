@@ -1,17 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://csa7fq71bcria"]
+[gd_scene load_steps=3 format=3 uid="uid://csa7fq71bcria"]
 
 [ext_resource type="Script" uid="uid://cw3y1mm4wejr2" path="res://Scripts/GridManager.gd" id="1_0bs3j"]
-[ext_resource type="PackedScene" uid="uid://do8v42k0hevdg" path="res://Scenes/CityBuildings/House.tscn" id="3_3xw5b"]
-
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_dvjdx"]
-resource_name = "House"
-scenes/0/scene = ExtResource("3_3xw5b")
-
-[sub_resource type="TileSet" id="TileSet_dcpom"]
-sources/1 = SubResource("TileSetScenesCollectionSource_dvjdx")
+[ext_resource type="PackedScene" uid="uid://c41hjtufvuqic" path="res://Scenes/tile_map_layer.tscn" id="2_f78f0"]
 
 [node name="Grid" type="Node2D"]
 script = ExtResource("1_0bs3j")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_set = SubResource("TileSet_dcpom")
+[node name="TileMapLayer" parent="." instance=ExtResource("2_f78f0")]

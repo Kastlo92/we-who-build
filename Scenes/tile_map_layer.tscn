@@ -1,0 +1,19 @@
+[gd_scene load_steps=6 format=3 uid="uid://c41hjtufvuqic"]
+
+[ext_resource type="PackedScene" uid="uid://do8v42k0hevdg" path="res://Scenes/CityBuildings/House.tscn" id="1_8cujs"]
+[ext_resource type="PackedScene" uid="uid://c8cn3ohucmo0l" path="res://Scenes/CityBuildings/Grass.tscn" id="2_tto40"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_dvjdx"]
+resource_name = "Buildings"
+scenes/0/scene = ExtResource("1_8cujs")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_tdbcv"]
+resource_name = "Nature"
+scenes/0/scene = ExtResource("2_tto40")
+
+[sub_resource type="TileSet" id="TileSet_dcpom"]
+sources/1 = SubResource("TileSetScenesCollectionSource_dvjdx")
+sources/2 = SubResource("TileSetScenesCollectionSource_tdbcv")
+
+[node name="TileMapLayer" type="TileMapLayer"]
+tile_set = SubResource("TileSet_dcpom")

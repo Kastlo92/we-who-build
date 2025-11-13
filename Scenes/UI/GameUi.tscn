@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://bi0j6e2gghwlt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jde55"]
+bg_color = Color(0, 0.233334, 1, 1)
+
+[node name="GameUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Resources" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 100.0
+grow_horizontal = 2
+
+[node name="Buildings" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jde55")
+
+[node name="BoxContainer" type="HBoxContainer" parent="Buildings"]
+layout_mode = 2
+
+[node name="House1" type="Button" parent="Buildings/BoxContainer"]
+layout_mode = 2
+text = "HOUSE 1 
+"
+
+[node name="Test" type="Button" parent="Buildings/BoxContainer"]
+layout_mode = 2
+text = "Test Button
+"

@@ -1,9 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ukhy4tu1nvja"]
+[gd_scene load_steps=5 format=3 uid="uid://ukhy4tu1nvja"]
 
 [ext_resource type="Script" uid="uid://d07leoyb5f8jj" path="res://Scripts/Menu.gd" id="1_8saeu"]
 [ext_resource type="Texture2D" uid="uid://d1302wkhxi2wd" path="res://Assets/Menu.png" id="1_cm0jj"]
-[ext_resource type="Texture2D" uid="uid://c5mio2h5e00u4" path="res://Assets/MenuButton.png" id="3_8saeu"]
 [ext_resource type="PackedScene" uid="uid://c7t18jck1r822" path="res://Scenes/MainCamera.tscn" id="3_syfuq"]
+[ext_resource type="PackedScene" uid="uid://btjsw2wqe5ylm" path="res://Scenes/UI/MenuUi.tscn" id="4_ghw46"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_8saeu")
@@ -13,33 +13,4 @@ texture = ExtResource("1_cm0jj")
 
 [node name="MainCamera" parent="Sprite2D" instance=ExtResource("3_syfuq")]
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -277.0
-offset_top = -261.0
-offset_right = 277.0
-offset_bottom = 325.0
-
-[node name="Continue" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 84.0
-offset_top = 307.0
-offset_right = 476.0
-offset_bottom = 377.0
-
-[node name="Settings" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 83.0
-offset_top = 397.0
-offset_right = 475.0
-offset_bottom = 467.0
-
-[node name="Exit" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 83.0
-offset_top = 491.0
-offset_right = 475.0
-offset_bottom = 561.0
-
-[connection signal="pressed" from="Control/Start" to="." method="_on_start_pressed"]
+[node name="Control" parent="." instance=ExtResource("4_ghw46")]
