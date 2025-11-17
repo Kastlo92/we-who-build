@@ -11,6 +11,8 @@ Todos:
 		- [X] ancorare i due pannelli alla parte superiore e inferiore della finestra
 	- [ ] Impostare la logica dei pulsanti:
 		1. Cliccando su "House" si potrà poi cliccare sul terreno per posizionare una casa
+		--> è possibile creare una classe che prende i segnali dai bottoni e imposta le costanti
+		-->da mettere nel set_cell?
 		2. Cliccando su l'altro pulsante (idk, test button) verrà "deselezionata" la casa
 	- [ ] mettere Un pulsante per selezionare l'edificio da mettere nella Grid
 	- [ ] Build a functioning menu

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://lqeuxmja87w0"]
+[gd_scene load_steps=6 format=3 uid="uid://lqeuxmja87w0"]
 
 [ext_resource type="PackedScene" uid="uid://csa7fq71bcria" path="res://Scenes/Grid.tscn" id="1_2ay5o"]
 [ext_resource type="Script" uid="uid://r5mxymbjei03" path="res://Scripts/GameDebugging.gd" id="1_upj1k"]
 [ext_resource type="PackedScene" uid="uid://c7t18jck1r822" path="res://Scenes/MainCamera.tscn" id="2_s0piq"]
 [ext_resource type="PackedScene" uid="uid://bi0j6e2gghwlt" path="res://Scenes/UI/GameUi.tscn" id="4_3dryh"]
+[ext_resource type="Script" uid="uid://cb3nw752gjhnx" path="res://Scripts/BuildManager.gd" id="5_wowpa"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_upj1k")
@@ -18,3 +19,6 @@ offset_left = -800.0
 offset_top = -399.0
 offset_right = 798.0
 offset_bottom = 401.0
+
+[node name="BuildManager" type="Node" parent="."]
+script = ExtResource("5_wowpa")

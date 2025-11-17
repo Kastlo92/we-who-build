@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bi0j6e2gghwlt"]
+[gd_scene load_steps=3 format=3 uid="uid://bi0j6e2gghwlt"]
+
+[ext_resource type="Script" uid="uid://cfvqu1ahv1flo" path="res://Scripts/GameUI.gd" id="1_uaywf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jde55"]
 bg_color = Color(0, 0.233334, 1, 1)
@@ -10,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_uaywf")
 
 [node name="Resources" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -41,3 +44,5 @@ text = "HOUSE 1
 layout_mode = 2
 text = "Test Button
 "
+
+[connection signal="button_down" from="Buildings/BoxContainer/House1" to="." method="_on_house_1_button_down"]

@@ -42,7 +42,7 @@ func insertTile(position: Vector2i) -> void:
 	#Attualmente il source ID è impostato su -1 perché stiamo scrivendo su tile "vuote".
 	#Se metto un terreno base sarà il caso di cambiare questa parte di codice 
 	if((tileMapLayer.get_cell_source_id(position)) != NATURE_SOURCE_ID):
-		print("GRASS!")
+		#print("GRASS!")
 		return
 		pass
 	tileMapLayer.set_cell(position, BUILDINGS_SOURCE_ID, Vector2i(0,0))	
