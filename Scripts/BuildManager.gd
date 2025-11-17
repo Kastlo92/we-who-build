@@ -1,4 +1,8 @@
 extends Node
 
-func printRandomStuff() -> void:
-	print("hello house")
+var selectedBuilding = 0;
+
+func setPlaceableBuilding(building: int) -> void:
+	print(building)
+	selectedBuilding = building;
+	

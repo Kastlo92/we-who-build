@@ -5,15 +5,14 @@ The population will react to the city you choose to make. Their happiness and th
 
 Made entirely in Godot using GDScript.
 
-Todos:
-	- [X] Put grass terrain on all tile at the start of the game
-	- [ ] Create UI for resource management
-		- [X] ancorare i due pannelli alla parte superiore e inferiore della finestra
-	- [ ] Impostare la logica dei pulsanti:
-		1. Cliccando su "House" si potrà poi cliccare sul terreno per posizionare una casa
-		--> è possibile creare una classe che prende i segnali dai bottoni e imposta le costanti
-		-->da mettere nel set_cell?
-		2. Cliccando su l'altro pulsante (idk, test button) verrà "deselezionata" la casa
-	- [ ] mettere Un pulsante per selezionare l'edificio da mettere nella Grid
-	- [ ] Build a functioning menu
-	
+TODO:
+
+- [x] Put grass terrain on all tile at the start of the game
+
+- [ ] buttons logic:
+
+  1.  by right clicking the house will not be "Positionable"
+  2.  when we're placing the tiles we should get a "preview" of the selected building in a more transparent color.
+
+- [ ] mettere Un pulsante per selezionare l'edificio da mettere nella Grid
+- [ ] Build a functioning menu

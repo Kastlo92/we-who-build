@@ -2,6 +2,7 @@ extends Node
 
 #@onready var tm: TileMap = $TileMapLayer
 @onready var tileMapLayer: TileMapLayer = $TileMapLayer
+@onready var buildManager: Node = $"../BuildManager"
 
 const COLUMNS = 100;
 const ROWS = 100;
@@ -23,6 +24,10 @@ func _process(delta: float) -> void:
 func _input(event):
 	#Posizionamento singola Tile
 	if Input.is_action_just_pressed("leftClick"):
+		if(buildManager.selectedBuilding == 0):
+			return
+			pass
+		
 		var localMousePos = tileMapLayer.get_local_mouse_position()			
 		var cell_coords = tileMapLayer.local_to_map(localMousePos)
 		if event is not InputEventMouseMotion and event.pressed:
