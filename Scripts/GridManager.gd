@@ -22,6 +22,10 @@ func _process(delta: float) -> void:
 	pass
 
 func _input(event):
+	if Input.is_action_just_pressed("rightClick"):
+		buildManager.selectedBuilding = 0
+		return
+	
 	#Posizionamento singola Tile
 	if Input.is_action_just_pressed("leftClick"):
 		if(buildManager.selectedBuilding == 0):
