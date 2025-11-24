@@ -1,8 +1,11 @@
 extends Node
 
-var selectedBuilding = 0;
+@export var build_preview: Sprite2D
+@export var buildings: Array[BuildingData]
+var selectedBuilding = BuildingData;
 
-func setPlaceableBuilding(building: int) -> void:
-	print(building)
-	selectedBuilding = building;
+func set_building(building_data: BuildingData):
+	selectedBuilding = building_data
+	build_preview.texture = building_data.preview_texture
+	build_preview.visible = true
 	

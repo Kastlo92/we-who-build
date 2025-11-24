@@ -6,10 +6,12 @@ extends Node
 
 const COLUMNS = 100;
 const ROWS = 100;
+const Deselect_building = 0
+
 const NATURE_SOURCE_ID := 2
 const BUILDINGS_SOURCE_ID := 1
-
 const GRASS_SOURCE_ID := 1
+
 var dragging = false;
 var click_radius = 32 # Size of the sprite.
 
@@ -18,19 +20,15 @@ func _ready() -> void:
 	fill_with_grass(tileMapLayer)
 	pass  
 
-func _process(delta: float) -> void:		
-	pass
-
 func _input(event):
 	if Input.is_action_just_pressed("rightClick"):
-		buildManager.selectedBuilding = 0
+		buildManager.selectedBuilding = Deselect_building
 		return
 	
 	#Posizionamento singola Tile
 	if Input.is_action_just_pressed("leftClick"):
-		if(buildManager.selectedBuilding == 0):
+		if(buildManager.selectedBuilding == Deselect_building):
 			return
-			pass
 		
 		var localMousePos = tileMapLayer.get_local_mouse_position()			
 		var cell_coords = tileMapLayer.local_to_map(localMousePos)
@@ -53,7 +51,6 @@ func insertTile(position: Vector2i) -> void:
 	if((tileMapLayer.get_cell_source_id(position)) != NATURE_SOURCE_ID):
 		#print("GRASS!")
 		return
-		pass
 	tileMapLayer.set_cell(position, BUILDINGS_SOURCE_ID, Vector2i(0,0))	
 	pass
 	
