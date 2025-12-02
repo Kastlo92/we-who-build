@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://csa7fq71bcria"]
+[gd_scene load_steps=5 format=3 uid="uid://csa7fq71bcria"]
 
 [ext_resource type="Script" uid="uid://cw3y1mm4wejr2" path="res://Scripts/GridManager.gd" id="1_0bs3j"]
-[ext_resource type="PackedScene" uid="uid://c41hjtufvuqic" path="res://Scenes/tile_map_layer.tscn" id="2_f78f0"]
+[ext_resource type="PackedScene" uid="uid://c8cn3ohucmo0l" path="res://Scenes/CityBuildings/Grass.tscn" id="1_f78f0"]
 
-[node name="Grid" type="Node2D"]
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_n8x2e"]
+resource_name = "ComputedTiles"
+scenes/4/scene = ExtResource("1_f78f0")
+
+[sub_resource type="TileSet" id="TileSet_tdbcv"]
+sources/0 = SubResource("TileSetScenesCollectionSource_n8x2e")
+
+[node name="Grid" type="TileMapLayer"]
+tile_set = SubResource("TileSet_tdbcv")
 script = ExtResource("1_0bs3j")
-
-[node name="TileMapLayer" parent="." instance=ExtResource("2_f78f0")]

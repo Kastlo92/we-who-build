@@ -1,23 +1,22 @@
-extends Node
+extends TileMapLayer
 
-#@onready var tm: TileMap = $TileMapLayer
-@onready var tileMapLayer: TileMapLayer = $TileMapLayer
+@onready var tileMapLayer: TileMapLayer = self
 @onready var buildManager: Node = $"../BuildManager"
 
+@export var Deselect_building: BuildingData
+#Grid
 const COLUMNS = 100;
 const ROWS = 100;
-const Deselect_building = 0
-
-const NATURE_SOURCE_ID := 2
+#tiles_id (da cambiare usando le risorse?)
+const COMPUTED_TILES_SOURCE_ID := 1
 const BUILDINGS_SOURCE_ID := 1
-const GRASS_SOURCE_ID := 1
 
 var dragging = false;
 var click_radius = 32 # Size of the sprite.
 
 
 func _ready() -> void:	
-	fill_with_grass(tileMapLayer)
+	fill_with_grass()
 	pass  
 
 func _input(event):
@@ -48,14 +47,14 @@ func _input(event):
 func insertTile(position: Vector2i) -> void:
 	#Attualmente il source ID è impostato su -1 perché stiamo scrivendo su tile "vuote".
 	#Se metto un terreno base sarà il caso di cambiare questa parte di codice 
-	if((tileMapLayer.get_cell_source_id(position)) != NATURE_SOURCE_ID):
+	if((tileMapLayer.get_cell_source_id(position)) != COMPUTED_TILES_SOURCE_ID):
 		#print("GRASS!")
 		return
 	tileMapLayer.set_cell(position, BUILDINGS_SOURCE_ID, Vector2i(0,0))	
 	pass
 	
-func fill_with_grass(tm: TileMapLayer) -> void: 
+func fill_with_grass() -> void: 
 	for y in range(-COLUMNS, COLUMNS):
 		for x in range(-ROWS, ROWS):
-			tm.set_cell(Vector2i(x,y), NATURE_SOURCE_ID, Vector2i(0, 0))
+			self.set_cell(Vector2i(x,y), COMPUTED_TILES_SOURCE_ID, Vector2i(0, 0))
 	pass

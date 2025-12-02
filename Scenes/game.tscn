@@ -1,16 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://lqeuxmja87w0"]
+[gd_scene load_steps=9 format=3 uid="uid://lqeuxmja87w0"]
 
 [ext_resource type="PackedScene" uid="uid://csa7fq71bcria" path="res://Scenes/Grid.tscn" id="1_2ay5o"]
 [ext_resource type="Script" uid="uid://r5mxymbjei03" path="res://Scripts/GameDebugging.gd" id="1_upj1k"]
 [ext_resource type="PackedScene" uid="uid://c7t18jck1r822" path="res://Scenes/MainCamera.tscn" id="2_s0piq"]
+[ext_resource type="Resource" uid="uid://cwadnnf16b0mi" path="res://Scripts/Models/Deselect.tres" id="3_v158k"]
 [ext_resource type="PackedScene" uid="uid://bi0j6e2gghwlt" path="res://Scenes/UI/GameUi.tscn" id="4_3dryh"]
+[ext_resource type="Resource" uid="uid://cb2ufx7b4svn1" path="res://Scripts/Models/House.tres" id="5_1l0tm"]
 [ext_resource type="Script" uid="uid://cb3nw752gjhnx" path="res://Scripts/BuildManager.gd" id="5_wowpa"]
-[ext_resource type="Script" uid="uid://rd0wsoca687l" path="res://Scripts/BuildPreview.gd" id="6_i6g32"]
+[ext_resource type="PackedScene" uid="uid://7wtoc53h6qnm" path="res://Scenes/CityBuildings/BuildPreview.tscn" id="8_v158k"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_upj1k")
 
 [node name="Grid" parent="." instance=ExtResource("1_2ay5o")]
+Deselect_building = ExtResource("3_v158k")
 
 [node name="MainCamera" parent="." instance=ExtResource("2_s0piq")]
 
@@ -20,9 +23,12 @@ offset_left = -800.0
 offset_top = -399.0
 offset_right = 798.0
 offset_bottom = 401.0
+HOUSE = ExtResource("5_1l0tm")
 
-[node name="BuildManager" type="Node" parent="."]
+[node name="BuildManager" type="Node" parent="." node_paths=PackedStringArray("build_preview")]
 script = ExtResource("5_wowpa")
+build_preview = NodePath("../BuildPreview")
 
-[node name="BuildPreview" type="Sprite2D" parent="."]
-script = ExtResource("6_i6g32")
+[node name="BuildPreview" parent="." node_paths=PackedStringArray("grid", "build_manager") instance=ExtResource("8_v158k")]
+grid = NodePath("../Grid")
+build_manager = NodePath("../BuildManager")

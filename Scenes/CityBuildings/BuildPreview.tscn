@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://7wtoc53h6qnm"]
+
+[ext_resource type="Script" uid="uid://rd0wsoca687l" path="res://Scripts/BuildPreview.gd" id="1_q3bn3"]
+[ext_resource type="Texture2D" uid="uid://dbh7r3xmivudy" path="res://Assets/DreadPalace.png" id="2_fejtl"]
+
+[node name="BuildPreview" type="Sprite2D"]
+script = ExtResource("1_q3bn3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_fejtl")

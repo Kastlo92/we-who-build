@@ -1,7 +1,6 @@
 extends Node
 @onready var build_manager := $"../BuildManager"
-
-var HOUSE = preload("res://Scripts/Models/House.tres")
+@export var HOUSE: BuildingData  
 
 func _on_house_1_button_down() -> void:
 	build_manager.set_building(HOUSE)
