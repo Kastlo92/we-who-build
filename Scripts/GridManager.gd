@@ -32,7 +32,7 @@ func _input(event):
 		var localMousePos = tileMapLayer.get_local_mouse_position()			
 		var cell_coords = tileMapLayer.local_to_map(localMousePos)
 		if event is not InputEventMouseMotion and event.pressed:
-			insertTile(cell_coords)
+			insert_tile(cell_coords)
 			dragging = true
 		#
 		##TRASCINAMENTO
@@ -42,9 +42,9 @@ func _input(event):
 	if  dragging:
 		var localMousePos = tileMapLayer.get_local_mouse_position()			
 		var cell_coords = tileMapLayer.local_to_map(localMousePos)
-		insertTile(cell_coords)
+		insert_tile(cell_coords)
 		
-func insertTile(position: Vector2i) -> void:
+func insert_tile(position: Vector2i) -> void:
 	#Attualmente il source ID è impostato su -1 perché stiamo scrivendo su tile "vuote".
 	#Se metto un terreno base sarà il caso di cambiare questa parte di codice 
 	if((tileMapLayer.get_cell_source_id(position)) != COMPUTED_TILES_SOURCE_ID):
